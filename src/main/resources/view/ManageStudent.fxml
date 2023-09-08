@@ -12,16 +12,6 @@
 
 <AnchorPane prefHeight="651.0" prefWidth="875.0" styleClass="anchorpanetop" stylesheets="@../css/studentmanagement.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageStudentController">
    <children>
-      <TableView fx:id="StudentTable" layoutX="71.0" layoutY="288.0" onMouseClicked="#rowOnMouseClicked" prefHeight="221.0" prefWidth="452.0">
-        <columns>
-          <TableColumn fx:id="StudentId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="StudentName" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="StudentAddress" prefWidth="75.0" text="Address" />
-            <TableColumn fx:id="StudentContactNo" prefWidth="75.0" text="Contact_No" />
-            <TableColumn fx:id="StudentGender" prefWidth="75.0" text="Gender" />
-            <TableColumn fx:id="StudentDOB" prefWidth="75.0" text="DOB" />
-        </columns>
-      </TableView>
       <AnchorPane layoutX="86.0" layoutY="61.0" prefHeight="207.0" prefWidth="667.0">
          <children>
             <JFXTextField fx:id="StudentFrom_Id" alignment="CENTER" layoutX="24.0" layoutY="48.0" onAction="#StudentIDonAction" prefHeight="34.0" prefWidth="152.0" promptText="Student ID" />
@@ -34,8 +24,22 @@
             <JFXButton fx:id="addStudentBTN" layoutX="598.0" layoutY="59.0" onAction="#AddStudent_OnAction" prefHeight="25.0" prefWidth="55.0" styleClass="jbutton" stylesheets="@../css/studentmanagement.css" text="Add" />
             <JFXButton layoutX="599.0" layoutY="104.0" onAction="#UpdateStu_OnAction" styleClass="jbutton" stylesheets="@../css/studentmanagement.css" text="Update" />
             <JFXButton layoutX="599.0" layoutY="150.0" onAction="#deleteStudent_OnAction" prefHeight="25.0" prefWidth="55.0" styleClass="jbutton" stylesheets="@../css/studentmanagement.css" text="Delete" />
+            <JFXButton layoutX="176.0" layoutY="59.0" onAction="#ClearStudentIdOnAction" text="clear" />
+            <JFXButton layoutX="179.0" layoutY="133.0" onAction="#ClearAddressOnAction" text="clear" />
+            <JFXButton layoutX="396.0" layoutY="60.0" onAction="#ClearNameOnAction" text="clear" />
+            <JFXButton layoutX="397.0" layoutY="132.0" onAction="#ClearContactNoOnAction" text="clear" />
          </children>
       </AnchorPane>
+      <TableView fx:id="StudentTable" layoutX="71.0" layoutY="288.0" onMouseClicked="#rowOnMouseClicked" prefHeight="221.0" prefWidth="452.0">
+        <columns>
+          <TableColumn fx:id="StudentId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="StudentName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="StudentAddress" prefWidth="75.0" text="Address" />
+            <TableColumn fx:id="StudentContactNo" prefWidth="75.0" text="Contact_No" />
+            <TableColumn fx:id="StudentGender" prefWidth="75.0" text="Gender" />
+            <TableColumn fx:id="StudentDOB" prefWidth="75.0" text="DOB" />
+        </columns>
+      </TableView>
       <ImageView fitHeight="225.0" fitWidth="251.0" layoutX="538.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/hostel.png" />

@@ -17,4 +17,5 @@ public interface StudentBO extends SuperBO {
     boolean updateStudent(StudentDTO studentDTO);
 
 
+    boolean deleteStudent(String studentId);
 }

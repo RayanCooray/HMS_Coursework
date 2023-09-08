@@ -2,6 +2,7 @@ package dao.custom.impl;
 
 import FactoryConfiguration.FactoryConfiguration;
 import dao.custom.UserDAO;
+import entity.Student;
 import entity.user;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,7 +24,13 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean update(user entity) {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.update(entity);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
@@ -51,5 +58,29 @@ public class UserDAOImpl implements UserDAO {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<user> getAll() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        List<user> userList = session.createNativeQuery("SELECT * FROM user").addEntity(user.class).list();
+
+        transaction.commit();
+        session.close();
+        return userList;
+    }
+
+    @Override
+    public boolean delete(user user1) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.remove(user1);
+        transaction.commit();
+        session.close();
+
+        return true;
     }
 }

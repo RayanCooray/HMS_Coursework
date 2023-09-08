@@ -26,10 +26,13 @@ public class DashboardController {
     }
 
     public void Dashboard(MouseEvent mouseEvent) throws IOException {
-//        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/Dashboard.fxml"));
-//        root.getChildren().clear();
-//        root.getChildren().add(anchorPane);
-//        pane.getChildren().clear();
+        AnchorPane load = FXMLLoader.load(getClass().getResource("/view/Dashboard.fxml"));
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.close();
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(load));
+        stage1.centerOnScreen();
+        stage1.show();
     }
 
     public void roommanageonaction(ActionEvent actionEvent) throws IOException {
@@ -51,8 +54,10 @@ public class DashboardController {
 
     }
 
-    public void CredentialsOnAction(ActionEvent actionEvent) {
-
+    public void CredentialsOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/credentials.fxml"));
+        root.getChildren().clear();
+        root.getChildren().add(anchorPane);
     }
 
 

@@ -3,6 +3,7 @@ package dao.custom.impl;
 import FactoryConfiguration.FactoryConfiguration;
 import dao.custom.RoomDAO;
 import entity.Room;
+import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -22,7 +23,14 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean update(Room entity) {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.update(entity);
+        transaction.commit();
+        session.close();
+
+        return true;
     }
 
     @Override
@@ -37,6 +45,25 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public List<Room> getAll() {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        List<Room> roomList = session.createNativeQuery("SELECT * FROM room").addEntity(Room.class).list();
+
+        transaction.commit();
+        session.close();
+        return roomList;
+    }
+
+    @Override
+    public boolean delete(Room room) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.remove(room);
+        transaction.commit();
+        session.close();
+
+        return true;
     }
 }

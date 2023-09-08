@@ -31,7 +31,7 @@ public class ManageStudentController implements Initializable {
     public DatePicker DatePicer;
     public RadioButton RadioButton_StuMale;
     public RadioButton RadioButtonStu_Female;
-    public TableView   StudentTable;
+    public TableView <StudentTM >  StudentTable;
     public TableColumn <?,?> StudentId;
     public TableColumn <?,?> StudentName;
     public TableColumn <?,?> StudentAddress;
@@ -72,6 +72,7 @@ public class ManageStudentController implements Initializable {
         studentDTO.setName(StudentForm_Name.getText());
         studentDTO.setAddress(StudentForm_Address.getText());
         studentDTO.setContact_no(StudentForm_Contact_No.getText());
+        studentDTO.setDob(Date.valueOf(DatePicer.getValue()));
         studentDTO.setGender(RadioButton_StuMale.isSelected() ? "Male" : "Female");
 
         boolean isUpdated = studentBO.updateStudent(studentDTO);
@@ -87,6 +88,18 @@ public class ManageStudentController implements Initializable {
     }
 
     public void deleteStudent_OnAction(ActionEvent actionEvent) {
+        StudentTM selectedItem = StudentTable.getSelectionModel().getSelectedItem();
+        if (selectedItem != null){
+            boolean isDeleted = studentBO.deleteStudent(selectedItem.getStudent_id());
+            if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Student deleted!...").show();
+                getALl();
+                setCellValueFactory();
+                clearTextFileds();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Student not deleted   !...").show();
+            }
+        }
 
     }
 
@@ -111,6 +124,8 @@ public class ManageStudentController implements Initializable {
         StudentForm_Address.clear();
         StudentForm_Contact_No.clear();
         DatePicer.setValue(null);
+        RadioButton_StuMale.setSelected(false);
+        RadioButtonStu_Female.setSelected(false);
 
     }
     private void getALl() {
@@ -149,4 +164,8 @@ public class ManageStudentController implements Initializable {
     public void DatePickerOnAction(ActionEvent actionEvent) {StudentForm_Address.requestFocus();}
     public void StudnetAddressOnAction(ActionEvent actionEvent) {StudentForm_Contact_No.requestFocus();}
     public void StudentContactNoOnAction(ActionEvent actionEvent) {}
+    public void ClearStudentIdOnAction(ActionEvent actionEvent) {StudentFrom_Id.clear();}
+    public void ClearAddressOnAction(ActionEvent actionEvent) {StudentForm_Address.clear();}
+    public void ClearNameOnAction(ActionEvent actionEvent) {StudentForm_Name.clear();}
+    public void ClearContactNoOnAction(ActionEvent actionEvent) {StudentForm_Contact_No.clear();}
 }

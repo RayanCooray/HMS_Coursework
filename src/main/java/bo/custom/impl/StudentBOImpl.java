@@ -40,7 +40,12 @@ public class StudentBOImpl implements StudentBO{
         return studentDAO.update(new Student(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender()));
     }
 
-
+    @Override
+    public boolean deleteStudent(String studentId) {
+        Student student = new Student();
+        student.setStudent_id(studentId);
+        return studentDAO.delete(student);
+    }
 
 
 }
