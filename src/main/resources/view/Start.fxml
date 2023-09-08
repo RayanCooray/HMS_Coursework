@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartForm">
+   <children>
+      <ImageView fx:id="imghostel" fitHeight="371.0" fitWidth="644.0" layoutX="259.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/hostel.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="286.0" layoutY="22.0" prefHeight="44.0" prefWidth="374.0" styleClass="toplable" stylesheets="@../css/style.css" text="D24 Hostel Management System">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="415.0" layoutY="500.0" onAction="#getstartedonAction" prefHeight="44.0" prefWidth="119.0" ripplerFill="#3dbf4e" styleClass="jbutton" stylesheets="@../css/style.css" text="Get Started">
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="BLACK" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill></JFXButton>
+   </children>
+</AnchorPane>

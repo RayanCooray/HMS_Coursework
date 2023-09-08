@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="651.0" prefWidth="875.0" styleClass="anchorpanetop" stylesheets="@../css/reservation.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.reservationroomController">
+   <children>
+      <JFXTextField fx:id="Resservation_Id" alignment="CENTER" layoutX="132.0" layoutY="90.0" prefHeight="34.0" prefWidth="152.0" promptText="Student ID" text="Reservation Id" />
+      <JFXTextField fx:id="Contact_No" alignment="CENTER" layoutX="358.0" layoutY="173.0" prefHeight="25.0" prefWidth="149.0" promptText="Contact_no" />
+      <JFXComboBox fx:id="RoomTypeReservation" layoutX="598.0" layoutY="96.0" onAction="#RoomTypeComboboxOnAction" prefHeight="25.0" prefWidth="135.0" promptText="Room Type">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXComboBox>
+      <JFXButton layoutX="597.0" layoutY="180.0" onAction="#AddReservation" prefHeight="25.0" prefWidth="136.0" styleClass="jbutton" stylesheets="@../css/reservation.css" text="Add Reservation" />
+      <TableView fx:id="Tablereservation" layoutX="128.0" layoutY="305.0" prefHeight="200.0" prefWidth="526.0">
+        <columns>
+          <TableColumn fx:id="Res_id" prefWidth="75.0" text="Res_Id" />
+          <TableColumn fx:id="Stu_Id" prefWidth="75.0" text="Stu_Id" />
+            <TableColumn fx:id="Res_ID" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="Res_Contact_Id" prefWidth="75.0" text="Contact_no" />
+            <TableColumn fx:id="RES_Room_Type" prefWidth="75.0" text="Room Type" />
+            <TableColumn fx:id="Res_KeyAmount" prefWidth="75.0" text="KeyAmount" />
+            <TableColumn fx:id="Paying_AmountTBL" prefWidth="75.0" text="Paying Amo" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="KeyMoney" alignment="CENTER" layoutX="132.0" layoutY="223.0" prefHeight="46.0" prefWidth="154.0" promptText="Address" text="Key Money" />
+      <JFXTextField fx:id="Paying_AmountRes" alignment="CENTER" layoutX="356.0" layoutY="224.0" prefHeight="46.0" prefWidth="154.0" promptText="Address" text="Paying Amount" />
+      <DatePicker fx:id="Res_date" layoutX="354.0" layoutY="96.0" prefHeight="25.0" prefWidth="163.0" />
+      <JFXComboBox fx:id="StudentComboBoox" layoutX="132.0" layoutY="180.0" onAction="#ResStudentComboBoxOnaction" prefHeight="25.0" prefWidth="154.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+.anchorpane {
+    /*-fx-background-color: linear-gradient(to bottom right, #3399ff 0%, #66ffcc 100%);*/
+    /*-fx-background-color: linear-gradient(to bottom right, #d6fbe4 0%, #87d7ff 100%);(SIDE)*/
+    -fx-background-color: linear-gradient(to left, #d6fbe4 0%, #87d7ff 100%);/*(RIGHT TO LEFT)*/
+    /*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 15, 0, 0, 0);*/
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0, 0, 0);
+}
+
+
+
+.jbuttons{
+
+}
+
+
+.jbuttons {
+    -fx-background-color: #A370F0;
+    -fx-text-fill: white;
+    -fx-font-family: inherit;
+    -fx-padding: 0.35em;
+    -fx-padding-left: 1.2em;
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 0.9em;
+    -fx-border-radius: 0.9em;
+    -fx-border-color: transparent;
+    -fx-letter-spacing: 0.05em;
+    -fx-display: flex;
+    -fx-align-items: center;
+    -fx-box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    -fx-overflow: hidden;
+    -fx-position: relative;
+    -fx-height: 2.8em;
+    -fx-padding-right: 3.3em;
+}
+
+.jbuttons .icon {
+    -fx-background-color: white;
+    -fx-margin-left: 1em;
+    -fx-position: absolute;
+    -fx-display: flex;
+    -fx-align-items: center;
+    -fx-justify-content: center;
+    -fx-height: 2.2em;
+    -fx-width: 2.2em;
+    -fx-background-radius: 0.7em;
+    -fx-box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    -fx-right: 0.3em;
+    -fx-transition: all 0.3s;
+}
+
+
+.jbuttons:pressed .icon {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+

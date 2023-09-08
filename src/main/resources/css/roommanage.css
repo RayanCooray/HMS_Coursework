@@ -1,0 +1,30 @@
+.jbutton{
+    -fx-background-color: #3DBF4E;
+
+}
+
+
+.anchorpanetop {
+    -fx-background-color: linear-gradient(to bottom, #33ccff 0%, #99ff99 100%);
+    /*-fx-effect: dropshadow(gaussian, #35a644, 24, 0, 24, 24),*/
+    /*dropshadow(gaussian, #45d858, -24, 0, 24, -24);*/
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0, 0, 0);
+}
+
+
+.anchorpanesub{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0, 0, 0);
+    -fx-background-color: #9EA6DF;
+
+}
+
+.anchorsub2side{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0, 0, 0);
+    /*-fx-background-color: #3DBF4E;*/
+    /*!* JavaFX CSS *!*/
+    -fx-border-radius: 0px;
+    -fx-background-color: #bbecd3;
+    /*-fx-effect: dropshadow(gaussian, #9fc9b3, 0, 1.0, 0, 0),*/
+    /*dropshadow(gaussian, #d7fff3, -20, 1.0, -20, -20);*/
+
+}

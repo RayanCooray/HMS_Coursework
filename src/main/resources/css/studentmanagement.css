@@ -1,0 +1,12 @@
+.jbutton{
+    -fx-background-color: #3DBF4E;
+    /*-fx-background-color: #4BC3FF;*/
+}
+
+
+.anchorpanetop {
+    -fx-background-color: linear-gradient(to bottom, #33ccff 0%, #99ff99 100%);
+    /*-fx-effect: dropshadow(gaussian, #35a644, 24, 0, 24, 24),*/
+    /*dropshadow(gaussian, #45d858, -24, 0, 24, -24);*/
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0, 0, 0);
+}

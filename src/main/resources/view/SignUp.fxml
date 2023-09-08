@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="532.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUpController">
+   <children>
+      <ImageView fx:id="quesImg" fitHeight="243.0" fitWidth="328.0" layoutX="331.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Screenshot_2023-08-16_144536-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="signupUserName" alignment="CENTER" layoutX="83.0" layoutY="79.0" promptText="UserName" />
+      <JFXTextField fx:id="UserEmail" alignment="CENTER" layoutX="84.0" layoutY="215.0" promptText="User E-mail" />
+      <JFXTextField fx:id="UserID" alignment="CENTER" layoutX="83.0" layoutY="150.0" prefHeight="25.0" prefWidth="138.0" promptText="UserId" />
+      <JFXButton layoutX="105.0" layoutY="316.0" onAction="#signuptoD24onAction" prefHeight="25.0" prefWidth="93.0" styleClass="jbutton" stylesheets="@../css/loginpage.css" text="Sign Up" />
+      <JFXButton layoutY="506.0" onAction="#backOnAction" prefHeight="25.0" prefWidth="41.0" text="back" />
+      <JFXTextField fx:id="PasswordUser" alignment="CENTER" layoutX="85.0" layoutY="266.0" promptText="Password" />
+   </children>
+</AnchorPane>
