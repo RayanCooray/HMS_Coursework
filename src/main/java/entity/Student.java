@@ -26,4 +26,9 @@ public class Student {
     private Date dob;
     private String gender;
 
+    @OneToMany(targetEntity = Reservation.class, mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Reservation> reservationList = new ArrayList<>();
+
+
+
 }

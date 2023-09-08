@@ -79,6 +79,9 @@ public class ManageStudentController implements Initializable {
 //
         if(isUpdated){
             new Alert(Alert.AlertType.CONFIRMATION, "Update Successfully!!").show();
+            setCellValueFactory();
+            getALl();
+            clearTextFileds();
 
         }else {
             new Alert(Alert.AlertType.ERROR, "Error!!").show();

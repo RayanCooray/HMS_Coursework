@@ -17,4 +17,11 @@ public class Reservation {
     private String res_id;
     private Date date;
     private String status;
+
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Student student;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Room room;
 }

@@ -17,7 +17,7 @@ public class StudentBOImpl implements StudentBO{
 
     @Override
     public boolean saveStudent(StudentDTO studentDTO) {
-        return  studentDAO.save(new Student(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender()));
+        return  studentDAO.save(new Student(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender(),new ArrayList<>()));
     }
 
     @Override
@@ -37,7 +37,7 @@ public class StudentBOImpl implements StudentBO{
 
     @Override
     public boolean updateStudent(StudentDTO studentDTO) {
-        return studentDAO.update(new Student(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender()));
+        return studentDAO.update(new Student(studentDTO.getStudent_id(),studentDTO.getName(),studentDTO.getAddress(),studentDTO.getContact_no(),studentDTO.getDob(),studentDTO.getGender(),new ArrayList<>()));
     }
 
     @Override
@@ -46,6 +46,8 @@ public class StudentBOImpl implements StudentBO{
         student.setStudent_id(studentId);
         return studentDAO.delete(student);
     }
+
+
 
 
 }

@@ -1,5 +1,6 @@
 package FactoryConfiguration;
 
+import entity.Reservation;
 import entity.Room;
 import entity.Student;
 import entity.user;
@@ -35,7 +36,8 @@ public class FactoryConfiguration {
         // add annotated class to configure
         configuration.addAnnotatedClass(user.class)
                 .addAnnotatedClass(Student.class).
-                addAnnotatedClass(Room.class);
+                addAnnotatedClass(Room.class).
+                addAnnotatedClass(Reservation.class);
 
         sessionFactory = configuration.buildSessionFactory();
     }

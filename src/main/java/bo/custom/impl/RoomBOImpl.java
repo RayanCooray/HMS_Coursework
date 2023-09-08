@@ -6,6 +6,7 @@ import dao.DAOFactory;
 import dao.custom.RoomDAO;
 import dto.RoomDTO;
 import dto.StudentDTO;
+import entity.Reservation;
 import entity.Room;
 import entity.Student;
 
@@ -20,7 +21,7 @@ public class RoomBOImpl implements RoomBO{
 
     @Override
     public boolean saveroom(RoomDTO roomDTO) {
-        return roomDAO.save(new Room(roomDTO.getRoom_type_id(),roomDTO.getType(),roomDTO.getKey_money(),roomDTO.getQty()));
+        return roomDAO.save(new Room(roomDTO.getRoom_type_id(),roomDTO.getType(),roomDTO.getKey_money(),roomDTO.getQty(),new ArrayList<>()));
     }
 
     @Override
@@ -35,7 +36,7 @@ public class RoomBOImpl implements RoomBO{
 
     @Override
     public boolean updateroom(RoomDTO roomDTO) {
-        return roomDAO.update(new Room(roomDTO.getRoom_type_id(),roomDTO.getType(),roomDTO.getKey_money(),roomDTO.getQty()));
+        return roomDAO.update(new Room(roomDTO.getRoom_type_id(),roomDTO.getType(),roomDTO.getKey_money(),roomDTO.getQty(),new ArrayList<>()));
     }
 
     @Override

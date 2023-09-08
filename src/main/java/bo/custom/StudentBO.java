@@ -18,4 +18,6 @@ public interface StudentBO extends SuperBO {
 
 
     boolean deleteStudent(String studentId);
+
+
 }
